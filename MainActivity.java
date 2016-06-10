@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -20,6 +21,15 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try {
+            if (savedInstanceState.getCharSequence("username") == null) {
+                System.out.println("user not logged in");
+            }
+        }
+        catch (NullPointerException e )
+        {
+            System.out.println("user not signed in");
+        }
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -88,15 +98,31 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            Toast t =  Toast.makeText(getApplicationContext() , "no camera action supported yet" , Toast.LENGTH_SHORT);
+            t.show();
+
         } else if (id == R.id.nav_gallery) {
+            Toast t =  Toast.makeText(getApplicationContext() , "no gallery action supported yet" , Toast.LENGTH_SHORT);
+            t.show();
 
         } else if (id == R.id.nav_slideshow) {
 
+            Toast t =  Toast.makeText(getApplicationContext() , "no slideshow action supported yet" , Toast.LENGTH_SHORT);
+            t.show();
+
         } else if (id == R.id.nav_manage) {
+
+            Toast t =  Toast.makeText(getApplicationContext() , "no manage action supported yet" , Toast.LENGTH_SHORT);
+            t.show();
 
         } else if (id == R.id.nav_share) {
 
+            Toast t =  Toast.makeText(getApplicationContext() , "no share action supported yet" , Toast.LENGTH_SHORT);
+            t.show();
+
         } else if (id == R.id.nav_send) {
+            Toast t =  Toast.makeText(getApplicationContext() , "no send action supported yet" , Toast.LENGTH_SHORT);
+            t.show();
 
         }
 
